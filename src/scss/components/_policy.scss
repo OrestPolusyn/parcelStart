@@ -2,55 +2,77 @@
 @use "../utils/mixins"as*;
 
 .policy {
-  padding: rem(30) 0;
-  line-height: 1.5;
-  color: var(--color-black);
+  padding: rem(78) 0;
+  color: var(--color-dark-900);
+
+  >* {
+    font-family: var(--font-family-primary);
+  }
 
   &__inner {
     max-width: 680px;
   }
 
+  &__content {
+    margin-bottom: rem(48);
+  }
+
   h1 {
     position: relative;
-    margin: 0 auto rem(32);
-    font-size: clamp(32px, 1.6176rem + 1.3vi, 56px);
-    color: var(--color-tile-800);
+    margin-bottom: rem(40);
   }
 
   h2 {
-    font-family: var(--font-family-primary);
-    font-weight: var(--fw-500);
-    font-size: 20px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-size: 30px;
+    color: var(--color-blue-400);
   }
 
   ul {
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     padding-left: 15px;
-    font-weight: 600;
   }
 
   li {
-    list-style-type: disc;
+    padding-left: 5px;
+    font-size: 20px;
     line-height: 1.43;
-    letter-spacing: 0.02em;
 
     &:not(:last-child) {
       margin-bottom: 3px;
+    }
+
+    &::marker {
+      content: '\2713';
+      margin-right: 5px;
     }
   }
 
   p {
     font-size: 20px;
+    line-height: 1.2;
 
     &:not(:last-child) {
-      margin-bottom: rem(25);
+      margin-bottom: 30px;
     }
   }
 
   a {
     text-decoration: underline;
-    color: var(--color-tile-800);
+    color: var(--color-blue-400);
+  }
+
+  b,
+  strong {
+    font-weight: var(--fw-600);
+  }
+
+  @include media(mobile-l) {
+    padding: 40px 0;
+
+    h1 {
+      margin-bottom: 30px;
+      text-align: center;
+    }
   }
 }

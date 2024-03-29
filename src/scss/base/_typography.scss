@@ -4,37 +4,36 @@
 h1,
 h2,
 h3 {
-  --font-weight: 600;
-
   overflow: hidden;
   width: fit-content;
-  font-family: var(--font-family-secondary);
-  font-size: clamp(2.5rem, 2.2451rem + 1.0458vi, 3.5rem);
+  font-weight: var(--fw-700);
+  line-height: 1.05;
+  color: var(--color-dark-400);
+}
 
-  @include media(mobile-m) {
-    line-height: 1.2;
+h1 {
+  font-size: clamp(2.25rem, 1.9951rem + 1.0458vi, 56px);
+
+  @include media(mobile-l) {
+    font-size: 34px;
   }
 }
 
-a,
-button {
-  --font-weight: 400;
-
-  font-family: var(--font-family-primary);
+h2,
+.title {
+  margin-bottom: rem(32);
+  font-size: clamp(2rem, 1.7143rem + 1.4286vi, 3rem);
+  letter-spacing: -0.015em;
+  text-align: left;
+  color: inherit;
 }
 
-h2 {
-  font-size: clamp(40px, 2rem + 1vi, 56px);
-  text-transform: capitalize;
-  color: var(--color-tile-800);
-}
-
-h3 {
-  font-size: clamp(32px, 2rem + 1vi, 40px);
-  text-transform: capitalize;
-  color: var(--color-tile-800);
+h3,
+.title--sec {
+  font-size: 32px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 20px;
+  line-height: 1.4;
 }

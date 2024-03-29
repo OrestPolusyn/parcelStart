@@ -1,0 +1,90 @@
+@use "../../utils/functions/"as*;
+@use "../../utils/mixins/"as*;
+
+.study {
+  padding: rem(86) 0;
+
+  &__inner {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: rem(68);
+    border-radius: var(--radius-main);
+    padding: rem(35) rem(67);
+    background-position: right center;
+    background-repeat: no-repeat;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      clip-path: polygon(0 0, 57% 0%, 52% 100%, 0% 100%);
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-blue-400);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    color: var(--color-white);
+  }
+
+  &__btn.btn {
+    margin: 0 auto;
+    max-width: 160px !important;
+
+    &::after {
+      filter: invert(1);
+    }
+  }
+
+  .btn {
+    justify-content: space-between;
+    padding: 17px 24px;
+    max-width: 120px;
+  }
+
+  h2 {
+    margin-bottom: rem(37);
+  }
+
+  h3 {
+    margin-bottom: 17px;
+    font-size: 32px;
+    line-height: 1.2;
+    color: var(--color-white);
+
+    +p {
+      margin-bottom: 40px;
+    }
+  }
+
+  img {
+    overflow: hidden;
+    border-radius: var(--radius-main);
+  }
+
+  @include media(mobile-l) {
+    &__inner {
+      margin-bottom: 30px 20px;
+      padding: 20px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: var(--color-black);
+        opacity: 0.7;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+  }
+}
